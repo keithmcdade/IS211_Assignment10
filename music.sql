@@ -1,5 +1,4 @@
--- join artist.name album.title, album join song song.album
-
+-- create a table for artists, albums, and songs
 CREATE TABLE artist (
     id INTEGER PRIMARY KEY,
     name TEXT
@@ -60,6 +59,7 @@ INSERT INTO songs (track_id, title, album, run_time) VALUES (8, "Blame It on the
 INSERT INTO songs (track_id, title, album, run_time) VALUES (9, "Lookin' for Another Pure Love", "Talking Book", "4:45");
 INSERT INTO songs (track_id, title, album, run_time) VALUES (10, "I Believe (When I Fall in Love It Will Be Forever)", "Talking Book", "4:48");
 
+-- display table with track listing for each album including album and artist names
 SELECT artist, album, songs.track_id, songs.title, songs.run_time
 FROM songs
 INNER JOIN album ON songs.album = album.title;
